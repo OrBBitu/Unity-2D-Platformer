@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Warp : MonoBehaviour
 {
-
-    public BoxCollider2D player;
     
     // Start is called before the first frame update
     void Start()
@@ -19,9 +18,15 @@ public class Warp : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(BoxCollider2D player)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("Merge!");
+        
+        if (col.gameObject.tag == "Player")
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+
+            SceneManager.LoadScene(currentScene.name);
+        }
     }
 
 }
