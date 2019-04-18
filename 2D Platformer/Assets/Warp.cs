@@ -23,9 +23,9 @@ public class Warp : MonoBehaviour
         
         if (col.gameObject.tag == "Player")
         {
-            Scene currentScene = SceneManager.GetActiveScene();
+            //Scene currentScene = SceneManager.GetActiveScene();
 
-            SceneManager.LoadScene(currentScene.name);
+            SceneManager.LoadScene("Level02");
         }
     }
 
