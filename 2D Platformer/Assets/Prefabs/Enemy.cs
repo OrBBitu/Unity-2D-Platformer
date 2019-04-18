@@ -25,10 +25,11 @@ public class Enemy : MonoBehaviour
 
         range = Vector2.Distance(transform.position, target.position);
         targetPos = new Vector3(target.position.x,
-                                        this.transform.position.y,
-                                        target.position.z);
+                                        this.transform.position.y,   // limitez pe axa Y 
+                                        target.position.z);        
 
         transform.LookAt(targetPos);
+        //sau direct transform.LookAt(target.position) si se uita dupa mine pe ambele axe
         transform.Rotate(new Vector3(0, 90, 0), Space.Self);
 
         if (range < minDistance)
