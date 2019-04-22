@@ -162,5 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 120
-  deathEffect: {fileID: 2351145486627329144, guid: 5feab73c430824f48a2acfcd4b6f093d,
+  deathEffect: {fileID: 2351145486627329144, guid: 24f4f8dc37b2e734685b8ebb70c2eec7,
     type: 3}
+  target: {fileID: 0}
+  minDistance: 0
+  moveSpeed: 0

@@ -2,24 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class AutoShoot : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+
+    Random rnd = new Random();
 
     // Update is called once per frame
 
     private void Start()
     {
-        InvokeRepeating("Shot", 3.0f, 1f);
+        //float rof = Random.Range(0.5f, 0.7f);
+        InvokeRepeating("Shoot", 5.0f, 0.3f);
     }
 
-    void Update()
-    {
-        
-    }
-
-    void Shot()
+    void Shoot()
     {
 
         //shooting logic
@@ -27,4 +25,5 @@ public class Shoot : MonoBehaviour
 
 
     }
+
 }
