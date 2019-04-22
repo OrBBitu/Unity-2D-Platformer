@@ -25,8 +25,13 @@ public class Warp : MonoBehaviour
         {
             //Scene currentScene = SceneManager.GetActiveScene();
 
-            SceneManager.LoadScene("Level02");
+            Invoke("ChangeLevel", 1.0f);
         }
+    }
+
+    void ChangeLevel()
+    {
+        SceneManager.LoadScene("Level02");
     }
 
 }

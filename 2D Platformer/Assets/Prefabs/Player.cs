@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject deathEffect;
+    public GameObject warpEffect;
 
     // Update is called once per frame
 
@@ -16,6 +17,15 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(deathEffect, transform.position, Quaternion.identity);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Warpgate")
+        {
+            Instantiate(warpEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
