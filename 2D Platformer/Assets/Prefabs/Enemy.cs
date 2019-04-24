@@ -38,6 +38,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="damage"></param>
     public void TakeDamage (int damage)
     {
         hp -= damage;
