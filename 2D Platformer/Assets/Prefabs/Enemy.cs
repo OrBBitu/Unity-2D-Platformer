@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
 
     public int hp = 100;
+    public int killscore, minscore;
 
     public GameObject deathEffect;
     public Transform target;
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         if(gameObject.name.Contains("Jumper"))InvokeRepeating("Jump", 2.0f, 1.5f);
+        InvokeRepeating("Substract", 0f, 3f);
     }
 
     void Update()
@@ -54,6 +56,8 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        //Debug.Log(killscore);
+        ScoreScript.scoreValue += killscore;
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
@@ -61,6 +65,11 @@ public class Enemy : MonoBehaviour
     void Jump()
     {
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.up * 7;
+    }
+
+    void Substract()
+    {
+        if (killscore > minscore) killscore -= 10;
     }
 
 }
