@@ -23,20 +23,26 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        target = GameObject.FindWithTag("Player").transform;
-
-        range = Vector2.Distance(transform.position, target.position);
-        targetPos = new Vector3(target.position.x,
-                                        this.transform.position.y,   // limitez pe axa Y 
-                                        target.position.z);        
-
-        transform.LookAt(targetPos);
-        //sau direct transform.LookAt(target.position) si se uita dupa mine pe ambele axe
-        transform.Rotate(new Vector3(0, 90, 0), Space.Self);
-
-        if (range < minDistance)
+        if (GameObject.Find("Player"))
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector3(0, 0, 0), moveSpeed * Time.deltaTime);
+            target = GameObject.FindWithTag("Player").transform;
+
+
+
+
+            range = Vector2.Distance(transform.position, target.position);
+            targetPos = new Vector3(target.position.x,
+                                            this.transform.position.y,   // limitez pe axa Y 
+                                            target.position.z);
+
+            transform.LookAt(targetPos);
+            //sau direct transform.LookAt(target.position) si se uita dupa mine pe ambele axe
+            transform.Rotate(new Vector3(0, 90, 0), Space.Self);
+
+            if (range < minDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, new Vector3(0, 0, 0), moveSpeed * Time.deltaTime);
+            }
         }
     }
 

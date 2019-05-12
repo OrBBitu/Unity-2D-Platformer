@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     public GameObject deathEffect;
     public GameObject warpEffect;
+    Vector3 startPos;
+    //public int health;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        HealthSystem.health = 5;
+         startPos = gameObject.transform.position;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -27,6 +34,37 @@ public class Player : MonoBehaviour
             Instantiate(warpEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+    }
+
+    public void TakeDamage()
+    {
+
+        HealthSystem.health -= 1; 
+        if (HealthSystem.health <= 0)
+        {
+            Reposition();
+        }
+
+    }
+
+    public void RestartLevel()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+
+    public void Die()
+    {
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene("Level01");
+    }
+
+    public void Reposition()
+    {
+        HealthSystem.health = 5;
+        gameObject.transform.position = startPos;
     }
 
 }

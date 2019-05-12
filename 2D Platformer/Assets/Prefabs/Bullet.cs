@@ -20,10 +20,16 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Enemy enemy = hitInfo.GetComponent<Enemy>();
+        Player player = hitInfo.GetComponent<Player>();
 
         if (enemy)
         {
             enemy.TakeDamage(damage);
+        }
+
+        if(player)
+        {
+            player.TakeDamage();
         }
 
         Instantiate(impactEffect, transform.position, transform.rotation);
