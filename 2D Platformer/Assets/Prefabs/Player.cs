@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
     public void Reposition()
     {
         HealthSystem.health = 5;
+        ScoreScript.scoreValue -= 100;
         gameObject.transform.position = startPos;
     }
 
