@@ -7,6 +7,7 @@ public class Warp : MonoBehaviour
 {
 
     int multiplier, bonus;
+    string nextLevel;
     
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,7 @@ public class Warp : MonoBehaviour
     void ChangeLevel()
     {
         
-        SceneManager.LoadScene("Level02");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }

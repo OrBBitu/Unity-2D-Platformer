@@ -16,6 +16,14 @@ public class Player : MonoBehaviour
         startPos = gameObject.transform.position;
     }
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("Exit"))
+        {
+            SceneManager.LoadScene("Menu");
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Enemy enemy = collision.GetComponent<Enemy>();
@@ -64,7 +72,7 @@ public class Player : MonoBehaviour
     public void Reposition()
     {
         HealthSystem.health = 5;
-        ScoreScript.scoreValue -= 100;
+        ScoreScript.scoreValue -= 500;
         gameObject.transform.position = startPos;
     }
 
