@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public Transform target;
     public float minDistance;
     public float moveSpeed;
+    public float jumpForce;
     private float range;
     Vector3 targetPos;
 
@@ -70,7 +71,7 @@ public class Enemy : MonoBehaviour
 
     void Jump()
     {
-        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.up * 7;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.up * jumpForce;
     }
 
     void Substract()

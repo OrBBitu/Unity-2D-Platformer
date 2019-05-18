@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Warp : MonoBehaviour
 {
+
+    int multiplier, bonus;
     
     // Start is called before the first frame update
     void Start()
@@ -24,13 +26,18 @@ public class Warp : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             //Scene currentScene = SceneManager.GetActiveScene();
-
+            Debug.Log(HealthSystem.health);
+            multiplier = HealthSystem.health;
+            bonus = multiplier * 200;
+            bonus = bonus / 2;
+            ScoreScript.scoreValue += bonus;
             Invoke("ChangeLevel", 1.0f);
         }
     }
 
     void ChangeLevel()
     {
+        
         SceneManager.LoadScene("Level02");
     }
 

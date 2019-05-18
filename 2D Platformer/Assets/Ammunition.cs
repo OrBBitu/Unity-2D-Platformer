@@ -10,7 +10,7 @@ public class Ammunition : MonoBehaviour
 
     public Image[] bullets;
     public Sprite bullet;
-    public Sprite emptyHeart;
+    public Sprite emptySprite;
 
     private void Update()
     {
@@ -29,7 +29,7 @@ public class Ammunition : MonoBehaviour
             }
             else
             {
-                bullets[i].sprite = emptyHeart;
+                bullets[i].sprite = emptySprite;
             }
 
             if (i < maxAmmo)
