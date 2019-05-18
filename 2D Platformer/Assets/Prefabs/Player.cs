@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         HealthSystem.health = 5;
-         startPos = gameObject.transform.position;
+        startPos = gameObject.transform.position;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -9,6 +9,12 @@ public class Weapon : MonoBehaviour
 
     // Update is called once per frame
 
+    private void Start()
+    {
+        Ammunition.ammo = 5;
+        InvokeRepeating("Generate", 1.0f, 2.0f);
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -21,9 +27,17 @@ public class Weapon : MonoBehaviour
     {
 
         //shooting logic
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        if(Ammunition.ammo >= 1)
+        {
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Ammunition.ammo -= 1;
+        }
 
+    }
 
+    void Generate()
+    {
+        if(Ammunition.ammo <= 4)Ammunition.ammo += 1;
     }
 
 }
