@@ -217,7 +217,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 8
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: YOU WON
+  m_text: (score)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6dd2666b6b09afb44b1552cccaed7670, type: 2}
   m_sharedMaterial: {fileID: 21201356715960118, guid: 6dd2666b6b09afb44b1552cccaed7670,
@@ -417,8 +417,8 @@ MonoBehaviour:
     textComponent: {fileID: 377066170}
     characterCount: 7
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -478,7 +478,7 @@ RectTransform:
   m_GameObject: {fileID: 637389832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.35975, y: 1.6387246, z: 1.11}
+  m_LocalScale: {x: 1.3515099, y: 1.6287938, z: 1.1032734}
   m_Children:
   - {fileID: 38469429}
   m_Father: {fileID: 702516034}
@@ -486,8 +486,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076293945, y: -149}
-  m_SizeDelta: {x: 262.8, y: 60.199997}
+  m_AnchoredPosition: {x: 226, y: -145.1}
+  m_SizeDelta: {x: 262.8, y: 99.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &637389834
 MonoBehaviour:
@@ -509,9 +509,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.9764151, b: 0.9764151, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.34117648}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.67058825}
+    m_NormalColor: {r: 1, g: 0.9764151, b: 0.9764151, a: 0.26666668}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.6}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -530,7 +530,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 637389837}
-        m_MethodName: Play
+        m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -562,8 +562,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8862730921c328947b61680ada32f3b3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
