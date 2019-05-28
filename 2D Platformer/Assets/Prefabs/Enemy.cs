@@ -16,10 +16,16 @@ public class Enemy : MonoBehaviour
     private float range;
     Vector3 targetPos;
 
+    public AudioClip squid_death, crab_death, jumper_death;
+    public AudioSource source;
+
     private void Start()
     {
         if(gameObject.name.Contains("Jumper"))InvokeRepeating("Jump", 2.0f, 1.5f);
         InvokeRepeating("Substract", 0f, 3f);
+        if (gameObject.name.Contains("Jumper")) source.clip = jumper_death;
+        if (gameObject.name.Contains("Crab")) source.clip = crab_death;
+        if (gameObject.name.Contains("Squid")) source.clip = squid_death;
     }
 
     void Update()
@@ -57,6 +63,7 @@ public class Enemy : MonoBehaviour
 
         if(hp <= 0)
         {
+            AudioSource.PlayClipAtPoint(source.clip, transform.position);
             Die();
         }
     }

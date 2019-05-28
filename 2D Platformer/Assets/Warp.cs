@@ -8,11 +8,13 @@ public class Warp : MonoBehaviour
 
     int multiplier, bonus;
     string nextLevel;
+    public AudioSource source;
+    public AudioClip warp_sound;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        source.clip = warp_sound;
     }
 
     // Update is called once per frame
@@ -32,6 +34,9 @@ public class Warp : MonoBehaviour
             bonus = multiplier * 200;
             bonus = bonus / 2;
             ScoreScript.scoreValue += bonus;
+
+            //AudioSource.PlayClipAtPoint(source.clip, transform.position);
+            source.Play();
             Invoke("ChangeLevel", 1.0f);
         }
     }
