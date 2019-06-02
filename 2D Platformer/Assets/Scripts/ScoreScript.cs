@@ -13,11 +13,11 @@ public class ScoreScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = GetComponent<TextMeshProUGUI>();
+        score = GetComponent<TextMeshProUGUI>(); // tine componenta 
     }
 
     void Update()
     {
-        score.text = "Score : " + scoreValue;
+        score.text = "Score : " + scoreValue; // acceseaza field-ul de text pentru a il updata la fiecare frame.
     }
 }

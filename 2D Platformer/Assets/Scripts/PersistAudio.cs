@@ -9,12 +9,20 @@ public class PersistAudio : MonoBehaviour
     {
 
     }
+
+    /// <summary>
+    /// Fiind statica, instanta obiectului va fi mereu unica.
+    /// </summary>
     private static PersistAudio instance = null;
     public static PersistAudio Instance
     {
         get { return instance; }
     }
 
+    /// <summary>
+    /// Awake() se apeleaza la fiecare creare a obiectului.
+    /// Daca exista deja o instanta, distruge instanta creata acum, altfel creeaza una.
+    /// </summary>
     void Awake()
     {
         if (instance != null && instance != this)
@@ -26,6 +34,6 @@ public class PersistAudio : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this.gameObject); // Previne distrugerea obiectului la incarcarea unei scene noi.
     }
 }

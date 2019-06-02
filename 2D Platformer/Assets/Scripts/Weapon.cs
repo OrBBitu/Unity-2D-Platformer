@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public Transform firePoint;
-    public GameObject bulletPrefab;
+    public Transform firePoint; // originea proiectilului.
+    public GameObject bulletPrefab; // proiectilul.
 
     public AudioClip shoot;
     public AudioSource source;
@@ -14,14 +14,14 @@ public class Weapon : MonoBehaviour
 
     private void Start()
     {
-        Ammunition.ammo = 5;
-        InvokeRepeating("Generate", 1.0f, 2.0f);
+        Ammunition.ammo = 5; // la inceput avem 5 gloante.
+        InvokeRepeating("Generate", 1.0f, 2.0f); // generam unul nou la fiecare secunda.
         source.clip = shoot;
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1")) // daca se apasa butonul de tragere.
         {
             Shoot();
         }
@@ -30,7 +30,7 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
 
-        //shooting logic
+        // daca am gloante cu care pot trage...
         if(Ammunition.ammo >= 1)
         {
             source.Play();
@@ -40,6 +40,9 @@ public class Weapon : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Functie care genereaza un glont.
+    /// </summary>
     void Generate()
     {
         if(Ammunition.ammo <= 4)Ammunition.ammo += 1;

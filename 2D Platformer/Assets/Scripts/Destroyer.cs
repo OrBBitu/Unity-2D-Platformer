@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicScript : MonoBehaviour
+public class Destroyer : MonoBehaviour
 {
-    public AudioClip music_clip;
-    public AudioSource music_source;
-    
     // Start is called before the first frame update
     void Start()
     {
-        music_source.clip = music_clip;
-        music_source.Play();
-
-        DontDestroyOnLoad(this.gameObject);
+        Destroy(gameObject, 5f);  /// Distruge obiectul la 5 secunde dupa ce a fost creat.
     }
 
     // Update is called once per frame
